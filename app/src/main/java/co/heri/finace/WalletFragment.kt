@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -44,7 +45,7 @@ class WalletFragment : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_wallet, container, false)
 
-        var test_brn = view.findViewById(R.id.test_btn) as Button
+        var test_brn = view.findViewById(R.id.test_btn) as MaterialButton
         test_brn.setOnClickListener {
             // Handler code here.
             Snackbar.make(view, "This is a snackbar", Snackbar.LENGTH_SHORT).show();

@@ -2,9 +2,11 @@ package co.heri.finace
 
 import android.app.Fragment
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.widget.Toast;
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,31 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigationView();
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.top_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        when (item.itemId) {
+            R.id.menu_qr -> {
+                Toast.makeText(this, "QR Menu clicked, coming soon", Toast.LENGTH_SHORT).show();
+                return true
+            }
+            R.id.menu_settings -> {
+                startSettings()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun startSettings() {
+        Toast.makeText(this, "Settings menu has been clicked", Toast.LENGTH_LONG).show();
     }
 
 
