@@ -41,6 +41,7 @@
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         android:theme="@style/Widget.MaterialComponents.BottomNavigationView"
+        app:elevation="0dp"
         app:itemBackground="@color/white"
         app:itemHorizontalTranslationEnabled="false"
         app:labelVisibilityMode="labeled"
