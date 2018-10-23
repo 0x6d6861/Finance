@@ -6,7 +6,7 @@
     <color name="colorAccent">#D81B60</color>
     -->
 
-    <color name="red_50">#ffebee</color>
+    <color name="red_50">#FFEBEE</color>
     <color name="red_100">#ffcdd2</color>
     <color name="red_200">#ef9a9a</color>
     <color name="red_300">#e57373</color>
@@ -83,7 +83,7 @@
 
     <color name="blue_50">#e3f2fd</color>
     <color name="blue_100">#bbdefb</color>
-    <color name="blue_200">#90caf9</color>
+    <color name="blue_200">#90CAF9</color>
     <color name="blue_300">#64b5f6</color>
     <color name="blue_400">#42a5f5</color>
     <color name="blue_500">#2196f3</color>
@@ -201,12 +201,12 @@
     <color name="yellow_A400">#ffea00</color>
     <color name="yellow_A700">#ffd600</color>
 
-    <color name="amber_50">#fff8e1</color>
+    <color name="amber_50">#FFF8E1</color>
     <color name="amber_100">#ffecb3</color>
     <color name="amber_200">#ffe082</color>
     <color name="amber_300">#ffd54f</color>
     <color name="amber_400">#ffca28</color>
-    <color name="amber_500">#ffc107</color>
+    <color name="amber_500">#FFC107</color>
     <color name="amber_600">#ffb300</color>
     <color name="amber_700">#ffa000</color>
     <color name="amber_800">#ff8f00</color>
@@ -269,14 +269,14 @@
     <color name="grey_900">#212121</color>
 
     <color name="blue_grey_50">#eceff1</color>
-    <color name="blue_grey_100">#cfd8dc</color>
+    <color name="blue_grey_100">#CFD8DC</color>
     <color name="blue_grey_200">#b0bec5</color>
-    <color name="blue_grey_300">#90a4ae</color>
+    <color name="blue_grey_300">#90A4AE</color>
     <color name="blue_grey_400">#78909c</color>
     <color name="blue_grey_500">#607d8b</color>
     <color name="blue_grey_600">#546e7a</color>
     <color name="blue_grey_700">#455a64</color>
-    <color name="blue_grey_800">#37474f</color>
+    <color name="blue_grey_800">#37474F</color>
     <color name="blue_grey_900">#263238</color>
 
     <color name="black">#000000</color>
