@@ -1,18 +1,13 @@
 package co.heri.finace
 
 import android.app.Fragment
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import android.widget.Toast;
-import `in`.mrasif.libs.easyqr.EasyQR
-import `in`.mrasif.libs.easyqr.QRScanner
-import android.app.Activity
-import android.content.Intent
-
-
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,22 +30,9 @@ class MainActivity : AppCompatActivity() {
         // Handle item selection
         when (item.itemId) {
             R.id.menu_qr -> {
-                val intent = Intent(this, QRScanner::class.java)
-                intent.putExtra(EasyQR.IS_TOOLBAR_SHOW,true);
-                intent.putExtra(EasyQR.TOOLBAR_DRAWABLE_ID,R.drawable.ic_audiotrack_dark);
-                intent.putExtra(EasyQR.TOOLBAR_TEXT,"My QR");
-                intent.putExtra(EasyQR.TOOLBAR_BACKGROUND_COLOR,"#0588EE");
-                intent.putExtra(EasyQR.TOOLBAR_TEXT_COLOR,"#FFFFFF");
-                intent.putExtra(EasyQR.BACKGROUND_COLOR,"#000000");
-                intent.putExtra(EasyQR.CAMERA_MARGIN_LEFT,50);
-                intent.putExtra(EasyQR.CAMERA_MARGIN_TOP,50);
-                intent.putExtra(EasyQR.CAMERA_MARGIN_RIGHT,50);
-                intent.putExtra(EasyQR.CAMERA_MARGIN_BOTTOM,50);
-                intent.putExtra(EasyQR.CAMERA_BORDER,100);
-                intent.putExtra(EasyQR.CAMERA_BORDER_COLOR,"#C1000000");
-                intent.putExtra(EasyQR.IS_SCAN_BAR,true);
-                intent.putExtra(EasyQR.IS_BEEP,true);
-                startActivityForResult(intent, EasyQR.QR_SCANNER_REQUEST)
+                Toast.makeText(this, "This is where the QR Code should be", Toast.LENGTH_SHORT).show()
+                var intent = Intent(this, ScanCodeActivity::class.java)
+                startActivity(intent);
                 return true
             }
             R.id.menu_settings -> {
@@ -58,17 +40,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            EasyQR.QR_SCANNER_REQUEST -> {
-                if (resultCode == Activity.RESULT_OK) {
-                    Toast.makeText(this, data!!.getStringExtra(EasyQR.DATA), Toast.LENGTH_LONG).show()
-                }
-            }
         }
     }
 
@@ -106,13 +77,10 @@ class MainActivity : AppCompatActivity() {
             selectFragment(menu.getItem(0))
 
             // Set action to perform when any menu-item is selected.
-            bottomNavigationView.setOnNavigationItemSelectedListener(
-                    object : BottomNavigationView.OnNavigationItemSelectedListener {
-                        override fun onNavigationItemSelected(item: MenuItem): Boolean {
-                            selectFragment(item)
-                            return false
-                        }
-                    })
+            bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+                selectFragment(item)
+                false
+            }
         }
     }
 
