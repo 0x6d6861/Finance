@@ -6,10 +6,13 @@ import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Vibrator
+import android.util.Log
+import android.util.SparseArray
 import android.view.View
 import androidx.core.app.NavUtils
 import android.view.MenuItem
 import android.view.SurfaceHolder
+import android.widget.Toast
 import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
@@ -42,14 +45,11 @@ class ScanCodeActivity : Activity() {
         barcodedector = BarcodeDetector.Builder(this)
                         .setBarcodeFormats(Barcode.QR_CODE).build()
         camerasourece = CameraSource.Builder(this, barcodedector)
-                .setRequestedPreviewSize(640,480)
-                .setAutoFocusEnabled(true)
+                .setRequestedFps(15.0f)
                 .build()
 
-        camera_preview.holder.addCallback(object: SurfaceHolder.Callback2{
-            override fun surfaceRedrawNeeded(holder: SurfaceHolder?) {
+        camera_preview.holder.addCallback(object: SurfaceHolder.Callback{
 
-            }
 
             override fun surfaceChanged(holder: SurfaceHolder?, format: Int, width: Int, height: Int) {
             }
@@ -76,12 +76,25 @@ class ScanCodeActivity : Activity() {
             }
 
             override fun receiveDetections(detections: Detector.Detections<Barcode>?) {
-                var qrCodes = detections?.detectedItems
-                scan_result.post {
-                    var vibrator: Vibrator = applicationContext.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-                    vibrator.vibrate(1000)
-                    scan_result.text = qrCodes?.get(0)?.displayValue
+                var qrCodes: SparseArray<Barcode> = detections!!.detectedItems
+
+                val size = qrCodes?.size()
+
+                if(size != 0){
+
+                    scan_result.post {
+                        var vibrator: Vibrator = applicationContext.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                        vibrator.vibrate(200)
+                        scan_result.text = qrCodes?.get(0)?.rawValue
+                    }
+
+                    barcodedector.release()
+                    //Toast.makeText(applicationContext, qrCodes?.get(0)?.displayValue, Toast.LENGTH_SHORT).show()
+
+
                 }
+
+
             }
 
         })
