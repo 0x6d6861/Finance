@@ -4,26 +4,25 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.os.Handler
 import android.os.Vibrator
-import android.util.Log
 import android.util.SparseArray
-import android.view.View
 import androidx.core.app.NavUtils
 import android.view.MenuItem
 import android.view.SurfaceHolder
-import android.widget.Toast
+import co.heri.finace.utils.CodeDector
 import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
 import kotlinx.android.synthetic.main.activity_scan_code.*
 import java.io.IOException
+import com.google.android.gms.vision.MultiProcessor
+import co.heri.finace.utils.BarcodeGraphic
+import co.heri.finace.utils.BarcodeTrackerFactory
+import co.heri.finace.utils.GraphicOverlay
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
+
+
 class ScanCodeActivity : Activity() {
 
     private var mVisible: Boolean = false
@@ -40,15 +39,32 @@ class ScanCodeActivity : Activity() {
         setContentView(R.layout.activity_scan_code)
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+
+
         mVisible = true
 
         barcodedector = BarcodeDetector.Builder(this)
                         .setBarcodeFormats(Barcode.QR_CODE).build()
-        camerasourece = CameraSource.Builder(this, barcodedector)
-                .setRequestedFps(15.0f)
+
+
+        val myDector = CodeDector(barcodedector, 420, 640)
+
+       // val mGraphicOverlay = findViewById<GraphicOverlay<BarcodeGraphic>>(R.id.graphicOverlay)
+
+
+
+        // TODO: check if carema has autofocus
+        camerasourece = CameraSource.Builder(this, myDector)
+                //.setRequestedFps(15.0f)
+                .setAutoFocusEnabled(true)
+                //.setRequestedPreviewSize(480, 360)
+                .setFacing(CameraSource.CAMERA_FACING_BACK)
                 .build()
 
-        camera_preview.holder.addCallback(object: SurfaceHolder.Callback{
+        camera_preview.holder.addCallback(object: SurfaceHolder.Callback2{
+            override fun surfaceRedrawNeeded(holder: SurfaceHolder?) {
+
+            }
 
 
             override fun surfaceChanged(holder: SurfaceHolder?, format: Int, width: Int, height: Int) {
@@ -71,26 +87,24 @@ class ScanCodeActivity : Activity() {
 
         })
 
-        barcodedector.setProcessor(object: Detector.Processor<Barcode>{
+        myDector.setProcessor(object: Detector.Processor<Barcode>{
             override fun release() {
             }
 
             override fun receiveDetections(detections: Detector.Detections<Barcode>?) {
                 var qrCodes: SparseArray<Barcode> = detections!!.detectedItems
 
-                val size = qrCodes?.size()
+                val size = qrCodes.size()
 
                 if(size != 0){
 
+                    myDector.release()
                     scan_result.post {
+                        // TODO: check if it is the right format, and check if the string is in expected format
                         var vibrator: Vibrator = applicationContext.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
                         vibrator.vibrate(200)
-                        scan_result.text = qrCodes?.get(0)?.rawValue
+                        scan_result.text = qrCodes.valueAt(0).displayValue
                     }
-
-                    barcodedector.release()
-                    //Toast.makeText(applicationContext, qrCodes?.get(0)?.displayValue, Toast.LENGTH_SHORT).show()
-
 
                 }
 
