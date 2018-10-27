@@ -1,6 +1,5 @@
 package co.heri.finace
 
-import android.app.Fragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -8,6 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         if (fragment == null)
             return
 
-        val fragmentManager = fragmentManager
+        val fragmentManager = supportFragmentManager
         if (fragmentManager != null) {
             val ft = fragmentManager.beginTransaction()
             if (ft != null) {
@@ -69,19 +69,18 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setupNavigationView() {
-        val bottomNavigationView = findViewById(R.id.navigation) as BottomNavigationView
-        if (bottomNavigationView != null) {
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation)
 
-            // Select first menu item by default and show Fragment accordingly.
-            val menu = bottomNavigationView.menu
-            selectFragment(menu.getItem(0))
+        // Select first menu item by default and show Fragment accordingly.
+        val menu = bottomNavigationView.menu
+        selectFragment(menu.getItem(0))
 
-            // Set action to perform when any menu-item is selected.
-            bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-                selectFragment(item)
-                false
-            }
+        // Set action to perform when any menu-item is selected.
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            selectFragment(item)
+            false
         }
+
     }
 
     /**
@@ -91,9 +90,9 @@ class MainActivity : AppCompatActivity() {
      */
     protected fun selectFragment(item: MenuItem) {
 
-        item.setChecked(true)
+        item.isChecked = true
 
-        when (item.getItemId()) {
+        when (item.itemId) {
 
             R.id.navigation_home -> {
                 pushFragment(HomeFragment());
