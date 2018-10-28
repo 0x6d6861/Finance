@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         // Handle item selection
         when (item.itemId) {
             R.id.menu_qr -> {
-                Toast.makeText(this, "This is where the QR Code should be", Toast.LENGTH_SHORT).show()
-                var intent = Intent(this, ScanCodeActivity::class.java)
+                //Toast.makeText(this, "This is where the QR Code should be", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, ScanCodeActivity::class.java)
                 startActivity(intent);
                 return true
             }

@@ -1,16 +1,12 @@
 package co.heri.finace
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
-import android.os.VibrationEffect
 import android.os.Vibrator
 import android.util.SparseArray
 import androidx.core.app.NavUtils
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.vision.barcode.Barcode
 import info.androidhive.barcode.BarcodeReader
