@@ -7,8 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import co.heri.finace.R
 import co.heri.finace.models.Offer
+import co.heri.finace.models.OffersAdapter
+import co.heri.finace.models.Product
+import co.heri.finace.models.ProductsAdapter
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,8 +51,24 @@ class HomeFragment : Fragment() {
         var offers = ArrayList<Offer>()
         offers.add(Offer(1, "Buy 2 Trousers", "Get 1 Shirt Free", "Promo Code: SMART", "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201708/31/00112262432706____5__516x640.jpg"))
         offers.add(Offer(2, "Cool Red Backpack", "Get 20% off", "Promo Code: REDBAG", "https://cdn.shopify.com/s/files/1/0790/7429/products/23510-325-903_530x.jpg?v=1536900845"))
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        var products = ArrayList<Product>()
+        products.add(Product(1, "Rene Knit Top", "30% Offer", "$54", "$68", "https://coast.btxmedia.com/pws/client/images/catalogue/products/2059580/MD/2059580.jpg"))
+        products.add(Product(2, "Minnie Top", "Only for July", "$76", "$58", "https://coast.btxmedia.com/pws/client/images/catalogue/products/2077833/LG/2077833.jpg"))
+        products.add(Product(3, "Amendine Maxi Dress", "Black Friday", "$269", "$178", "https://coast.btxmedia.com/pws/client/images/catalogue/products/2077980/LG/2077980_1.jpg"))
+
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        var finance_offers = view.findViewById<RecyclerView>(R.id.finance_offers)
+        var product_offers = view.findViewById<RecyclerView>(R.id.product_recycler)
+
+        finance_offers.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
+        finance_offers.adapter = OffersAdapter(offers, this.context)
+
+        product_offers.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
+        product_offers.adapter = ProductsAdapter(products, this.context)
+
+        return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event
