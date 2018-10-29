@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import co.heri.finace.R
+import co.heri.finace.models.Offer
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,6 +41,10 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+        var offers = ArrayList<Offer>()
+        offers.add(Offer(1, "Buy 2 Trousers", "Get 1 Shirt Free", "Promo Code: SMART", "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201708/31/00112262432706____5__516x640.jpg"))
+        offers.add(Offer(2, "Cool Red Backpack", "Get 20% off", "Promo Code: REDBAG", "https://cdn.shopify.com/s/files/1/0790/7429/products/23510-325-903_530x.jpg?v=1536900845"))
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }

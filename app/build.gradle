@@ -42,6 +42,7 @@ dependencies {
 //    Custom
     implementation 'com.jjoe64:graphview:4.2.2'
     implementation project(path: ':barcode-reader')
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
 
 apply plugin: 'com.google.gms.google-services'
