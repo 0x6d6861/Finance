@@ -1,4 +1,4 @@
-package co.heri.finace
+package co.heri.finace.fragments
 
 import android.content.Context
 import android.net.Uri
@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import co.heri.finace.R
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.snackbar.Snackbar
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -17,13 +20,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [ProfileFragment.OnFragmentInteractionListener] interface
+ * [WalletFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [ProfileFragment.newInstance] factory method to
+ * Use the [WalletFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class ProfileFragment : Fragment() {
+class WalletFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -40,7 +43,15 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        var view = inflater.inflate(R.layout.fragment_wallet, container, false)
+
+        var test_brn = view.findViewById(R.id.test_btn) as MaterialButton
+        test_brn.setOnClickListener {
+            // Handler code here.
+            Snackbar.make(view, "This is a snackbar", Snackbar.LENGTH_SHORT).show();
+        }
+
+        return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -85,12 +96,12 @@ class ProfileFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
+         * @return A new instance of fragment WalletFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-                ProfileFragment().apply {
+                WalletFragment().apply {
                     arguments = Bundle().apply {
                         putString(ARG_PARAM1, param1)
                         putString(ARG_PARAM2, param2)

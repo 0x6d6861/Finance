@@ -1,4 +1,4 @@
-package co.heri.finace
+package co.heri.finace.fragments
 
 import android.content.Context
 import android.net.Uri
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import co.heri.finace.R
 
 
 // TODO: Rename parameter arguments, choose names that match

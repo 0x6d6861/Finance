@@ -57,7 +57,8 @@ public class ScannerOverlay extends ViewGroup {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         left = (w - dpToPx(rectWidth)) / 2;
-        top = (h - dpToPx(rectHeight)) / 2;
+//        top = (h - dpToPx(rectHeight)) / 2;
+        top = (h - dpToPx(rectHeight)) / 3;
         endY = top;
         super.onSizeChanged(w, h, oldw, oldh);
     }

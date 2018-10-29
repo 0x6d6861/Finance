@@ -1,30 +1,378 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".fragments.HomeFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:contentPadding="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
+        <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:background="@color/grey_900"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5sp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="52sp"
+                        android:layout_height="52sp"
+                        android:layout_margin="5sp"
+                        android:background="@drawable/circular_edge"
+                        android:backgroundTint="@color/grey_300"
+                        android:src="@drawable/ic_pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pay"
+                        android:textAlignment="center"
+                        android:textColor="@color/white_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="52sp"
+                        android:layout_height="52sp"
+                        android:layout_margin="5sp"
+                        android:background="@drawable/circular_edge"
+                        android:backgroundTint="@color/grey_300"
+                        android:src="@drawable/ic_mobile_money" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Deposit"
+                        android:textAlignment="center"
+                        android:textColor="@color/white_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="52sp"
+                        android:layout_height="52sp"
+                        android:layout_margin="5sp"
+                        android:background="@drawable/circular_edge"
+                        android:backgroundTint="@color/grey_300"
+                        android:src="@drawable/ic_book" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PayBook"
+                        android:textAlignment="center"
+                        android:textColor="@color/white_text" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:orientation="vertical"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginBottom="10sp"
+                android:text="Recharge and Pay Bill for"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5sp">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:orientation="vertical"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginBottom="10sp"
+                android:text="Now Book on Finance"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5sp">
+
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/service_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:orientation="vertical"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginBottom="10sp"
+                android:text="Finance Offers"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5sp">
+
+
+                    <include
+                        layout="@layout/offers_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/offers_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:orientation="vertical"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginBottom="10sp"
+                android:text="Product Offers"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5sp">
+
+
+                    <include
+                        layout="@layout/product_offers_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/product_offers_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+                    <include
+                        layout="@layout/product_offers_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+                    <include
+                        layout="@layout/product_offers_card_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_marginBottom="10sp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

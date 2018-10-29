@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import co.heri.finace.fragments.HomeFragment
+import co.heri.finace.fragments.ProfileFragment
+import co.heri.finace.fragments.SavingsFragment
+import co.heri.finace.fragments.WalletFragment
 
 
 class MainActivity : AppCompatActivity() {
