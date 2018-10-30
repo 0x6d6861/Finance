@@ -8,9 +8,9 @@
     android:layout_marginRight="5sp"
     android:layout_marginBottom="15sp"
     app:cardCornerRadius="15dp"
-    app:cardElevation="10dp"
-    app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="false">
+    app:cardElevation="4dp"
+    android:scaleType="fitXY"
+    app:cardPreventCornerOverlap="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,8 +27,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="false"
             android:layout_alignParentBottom="false"
-            android:scaleType="centerInside"
-            android:src="@drawable/trousers"
+            android:adjustViewBounds="true"
+            android:background="@drawable/bg_wallet_gradient"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

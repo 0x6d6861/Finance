@@ -6,10 +6,12 @@
     <color name="colorAccent">#D81B60</color>
     -->
 
+    <color name="main">#147a9a</color>
+
     <color name="red_50">#FFEBEE</color>
     <color name="red_100">#ffcdd2</color>
-    <color name="red_200">#ef9a9a</color>
-    <color name="red_300">#e57373</color>
+    <color name="red_200">#EF9A9A</color>
+    <color name="red_300">#E57373</color>
     <color name="red_400">#ef5350</color>
     <color name="red_500">#f44336</color>
     <color name="red_600">#e53935</color>
@@ -82,7 +84,7 @@
     <color name="indigo_A700">#304ffe</color>
 
     <color name="blue_50">#E3F2FD</color>
-    <color name="blue_100">#bbdefb</color>
+    <color name="blue_100">#BBDEFB</color>
     <color name="blue_200">#90CAF9</color>
     <color name="blue_300">#64b5f6</color>
     <color name="blue_400">#42a5f5</color>
@@ -124,7 +126,7 @@
     <color name="cyan_A100">#84ffff</color>
     <color name="cyan_A200">#18ffff</color>
     <color name="cyan_A400">#00e5ff</color>
-    <color name="cyan_A700">#00b8d4</color>
+    <color name="cyan_A700">#00B8D4</color>
 
     <color name="teal_50">#e0f2f1</color>
     <color name="teal_100">#B2DFDB</color>

@@ -34,7 +34,6 @@
                         android:layout_height="52sp"
                         android:layout_margin="5sp"
                         android:background="@drawable/circular_edge"
-                        android:backgroundTint="@color/grey_300"
                         android:src="@drawable/ic_pay" />
 
                     <TextView
@@ -55,7 +54,6 @@
                         android:layout_height="52sp"
                         android:layout_margin="5sp"
                         android:background="@drawable/circular_edge"
-                        android:backgroundTint="@color/grey_300"
                         android:src="@drawable/ic_mobile_money" />
 
                     <TextView
@@ -76,7 +74,6 @@
                         android:layout_height="52sp"
                         android:layout_margin="5sp"
                         android:background="@drawable/circular_edge"
-                        android:backgroundTint="@color/grey_300"
                         android:src="@drawable/ic_book" />
 
                     <TextView
@@ -205,7 +202,7 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/finance_offers"
@@ -237,7 +234,7 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/product_recycler"
