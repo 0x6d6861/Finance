@@ -40,9 +40,10 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
 
 //    Custom
-    implementation 'com.jjoe64:graphview:4.2.2'
     implementation project(path: ':barcode-reader')
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.blackfizz:eazegraph:1.2.2@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

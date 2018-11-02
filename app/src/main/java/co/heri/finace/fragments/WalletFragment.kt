@@ -10,6 +10,11 @@ import androidx.fragment.app.Fragment
 import co.heri.finace.R
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
+import org.eazegraph.lib.models.ValueLinePoint
+import org.eazegraph.lib.models.ValueLineSeries
+import org.eazegraph.lib.charts.ValueLineChart
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,6 +55,22 @@ class WalletFragment : Fragment() {
             // Handler code here.
             Snackbar.make(view, "This is a snackbar", Snackbar.LENGTH_SHORT).show();
         }
+
+        val mCubicValueLineChart = view.findViewById(R.id.cubiclinechart) as ValueLineChart
+
+        val series = ValueLineSeries()
+        series.color = -0xa9480f
+
+        series.addPoint(ValueLinePoint("Mon", 2.4f))
+        series.addPoint(ValueLinePoint("Tue", 3.4f))
+        series.addPoint(ValueLinePoint("Wed", .4f))
+        series.addPoint(ValueLinePoint("Thu", 1.2f))
+        series.addPoint(ValueLinePoint("Fri", 2.6f))
+        series.addPoint(ValueLinePoint("Sat", 1.0f))
+        series.addPoint(ValueLinePoint("Sun", 3.5f))
+
+        mCubicValueLineChart.addSeries(series)
+        mCubicValueLineChart.startAnimation()
 
         return view
     }
