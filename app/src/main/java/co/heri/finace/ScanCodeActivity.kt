@@ -8,6 +8,7 @@ import androidx.core.app.NavUtils
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import co.heri.finace.utils.barcode.BarcodeReader
 import com.google.android.gms.vision.barcode.Barcode
 import kotlinx.android.synthetic.main.activity_scan_code.*
 
