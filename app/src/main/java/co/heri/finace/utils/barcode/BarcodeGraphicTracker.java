@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package info.androidhive.barcode;
+package co.heri.finace.utils.barcode;
 
 import android.util.Log;
 import android.util.SparseArray;
@@ -25,7 +25,7 @@ import com.google.android.gms.vision.barcode.Barcode;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.androidhive.barcode.camera.GraphicOverlay;
+import co.heri.finace.utils.barcode.camera.GraphicOverlay;
 
 /**
  * Generic tracker which is used for tracking or reading a barcode (and can really be used for

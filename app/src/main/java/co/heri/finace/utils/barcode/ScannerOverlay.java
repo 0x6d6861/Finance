@@ -1,4 +1,4 @@
-package info.androidhive.barcode;
+package co.heri.finace.utils.barcode;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,6 +10,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.ViewGroup;
+import co.heri.finace.R;
 
 import androidx.core.content.ContextCompat;
 

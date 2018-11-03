@@ -9,7 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.vision.barcode.Barcode
-import info.androidhive.barcode.BarcodeReader
+import co.heri.finace.utils.barcode.BarcodeReader
 import kotlinx.android.synthetic.main.activity_scan_code.*
 
 

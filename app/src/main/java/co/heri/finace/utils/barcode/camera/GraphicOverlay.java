@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package info.androidhive.barcode.camera;
+package co.heri.finace.utils.barcode.camera;
 
 import android.content.Context;
 import android.graphics.Canvas;

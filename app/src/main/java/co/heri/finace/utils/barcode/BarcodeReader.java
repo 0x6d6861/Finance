@@ -1,4 +1,4 @@
-package info.androidhive.barcode;
+package co.heri.finace.utils.barcode;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -44,9 +44,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import info.androidhive.barcode.camera.CameraSource;
-import info.androidhive.barcode.camera.CameraSourcePreview;
-import info.androidhive.barcode.camera.GraphicOverlay;
+import co.heri.finace.R;
+import co.heri.finace.utils.barcode.camera.CameraSource;
+import co.heri.finace.utils.barcode.camera.CameraSourcePreview;
+import co.heri.finace.utils.barcode.camera.GraphicOverlay;
 
 public class BarcodeReader extends Fragment implements View.OnTouchListener, BarcodeGraphicTracker.BarcodeGraphicTrackerListener {
     public static final String BarcodeObject = "Barcode";
