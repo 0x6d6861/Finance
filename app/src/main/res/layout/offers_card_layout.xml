@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Buy 2 Tickets"
-                android:textColor="@color/blue_500"
+                android:textColor="@color/primaryDarkColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Get 1 Ticket Free"
-                android:textColor="@color/amber_900"
+                android:textColor="@color/accent_dark"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

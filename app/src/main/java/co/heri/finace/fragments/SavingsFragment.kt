@@ -30,18 +30,25 @@ class SavingsFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_savings, container, false)
+        val view = inflater.inflate(R.layout.fragment_savings, container, false)
+
+
+        return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -98,4 +105,6 @@ class SavingsFragment : Fragment() {
                     }
                 }
     }
+
+
 }
