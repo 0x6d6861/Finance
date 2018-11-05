@@ -35,8 +35,7 @@
             android:name=".ScanCodeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_scan_code"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/FullscreenTheme">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="co.heri.finace.MainActivity" />
